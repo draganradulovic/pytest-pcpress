@@ -1,0 +1,112 @@
+1651167317170	geckodriver	INFO	Listening on 127.0.0.1:56879
+1651167320318	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56880" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofileozEGUO"
+1651167324642	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofileozEGUO\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56880/devtools/browser/ec828928-eb91-4aaf-bd09-9f566986f94a
+1651167337068	Marionette	INFO	Listening on port 56886
+1651167337704	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+1651167347381	Marionette	INFO	Stopped listening on port 56886
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1651167363559	geckodriver	INFO	Listening on 127.0.0.1:56967
+1651167366647	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56968" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofilezoPGqg"
+1651167367532	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofilezoPGqg\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56968/devtools/browser/a40acbef-7fd3-4f3e-b978-bc50e66e24b8
+1651167372719	Marionette	INFO	Listening on port 56974
+1651167373034	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+1651167386676	Marionette	INFO	Stopped listening on port 56974
+[Parent 14224, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:725
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+!!! error running onStopped callback: TypeError: callback is not a function
+console.error: PushService: 
+  stateChangeProcessEnqueue: Error transitioning state
+  Message: Error: Data is not ready.
+  Stack:
+    get data@resource://gre/modules/JSONFile.jsm:186:13
+getListeners@resource://gre/modules/PushBroadcastService.jsm:66:5
+observe@resource://gre/modules/AsyncShutdown.jsm:575:16
+
+1651173174609	geckodriver	INFO	Listening on 127.0.0.1:58580
+1651173177687	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58581" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofileo8NOZe"
+1651173178612	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofileo8NOZe\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58581/devtools/browser/75491634-0e27-4fba-a207-73ea4990c2fa
+1651173185289	Marionette	INFO	Listening on port 58587
+1651173185655	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+1651173211154	Marionette	INFO	Stopped listening on port 58587
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1105: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\User\AppData\Local\Temp\rust_mozprofileo8NOZe\protections.sqlite
+1651173313198	geckodriver	INFO	Listening on 127.0.0.1:58700
+1651173316297	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58701" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofile5P2KG8"
+1651173317062	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofile5P2KG8\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58701/devtools/browser/a64ac8a3-5d4c-4766-89f4-4a57d1ec0424
+1651173323125	Marionette	INFO	Listening on port 58708
+1651173323279	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 10: TypeError: document.getElementById(...) is null
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 10: TypeError: document.getElementById(...) is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651241978154	Marionette	INFO	Stopped listening on port 58708
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1651243159373	geckodriver	INFO	Listening on 127.0.0.1:51101
+1651243162410	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51102" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofilenHHWC4"
+1651243169139	Marionette	INFO	Marionette enabled
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofilenHHWC4\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51102/devtools/browser/2da3aa16-20d8-44d5-9eed-de028d58b6a5
+1651243190976	Marionette	INFO	Listening on port 51108
+1651243191493	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+1651243228424	Marionette	INFO	Stopped listening on port 51108
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 12568, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1651243280062	geckodriver	INFO	Listening on 127.0.0.1:51229
+1651243283129	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51230" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofileCp0Wu6"
+1651243284987	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofileCp0Wu6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51230/devtools/browser/256b6a0b-34b9-40c2-ba05-739cd10fb550
+1651243290606	Marionette	INFO	Listening on port 51236
+1651243291132	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+JavaScript error: https://pcpress.rs/prodavnica/lib/divglavna.js, line 2: ReferenceError: jQuery is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://pcpress.rs"
+1651243496915	Marionette	INFO	Stopped listening on port 51236
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
