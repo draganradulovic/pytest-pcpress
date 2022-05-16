@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 from base.selenium_driver import Selenium_actions
 import time
 
@@ -22,6 +22,26 @@ class Base_page(Selenium_actions):
     def sleep(self, seconds=5):
         time.sleep(seconds)
 
+    def scroll_by_ele(self, element, by='xpath'):
+        try:
+            element=self.get_element(element, by)
+            location = element.location_once_scrolled_into_view
+            self.log.info("Scrolled to" + str(location))
+            self.driver.execute_script("window.scrollBy(0, -160);")
+        except:
+            self.log.error("scroll_by_ele method do NOT work")
+
+    def dropdown_select(self, items, element, by='xpath'):
+        el = self.get_element(element, by)
+        select = Select(el)
+        select.deselect_all()
+        if type(items) is list:
+            for item in items:
+                select.select_by_visible_text(item)
+        else:
+            select.select_by_visible_text(items)
+
+
 
     def element_present(self, element):
         try:
@@ -29,6 +49,4 @@ class Base_page(Selenium_actions):
             if element is not None:
                 return True
         except:
-            time.sleep(5)
-            print('jbg')
             return False

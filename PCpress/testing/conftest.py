@@ -1,6 +1,5 @@
 from selenium import webdriver
 from configfiles.webdriverfactory import Webdriverfactory
-from selenium.webdriver.common.by import By
 import unittest
 import pytest
 
@@ -8,8 +7,9 @@ import pytest
 @pytest.fixture(scope="class")
 def oneTimeSetUp6(browser, request):
     drv=Webdriverfactory(browser)
-    driver=drv.driver_instance()
-    driver.get("https://pcpress.rs/prodavnica/index.php")
+    global driver
+    driver = drv.driver_instance()
+    #driver.get("https://pcpress.rs/prodavnica/index.php")
     driver.maximize_window()
     driver.implicitly_wait(10)
 
@@ -18,12 +18,12 @@ def oneTimeSetUp6(browser, request):
     yield driver
     driver.close()
 
-@pytest.fixture(scope="class")
+@pytest.fixture()
 def setUp6():
-    print("Before every method")
+    driver.get("https://pcpress.rs/prodavnica/index.php")
+    print("Setup before every method")
     yield
-    print("After every method")
-
+    print("Setup after every method")
 
 def pytest_addoption(parser):
     parser.addoption("--browser")

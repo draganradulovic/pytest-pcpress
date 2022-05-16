@@ -1,11 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from base.base_page import Base_page
 from base.selenium_driver import Selenium_actions
-from selenium.webdriver.support.ui import Select
 import utilities.custom_logger as cl
 import logging
-import time
+from selenium.webdriver.support.color import Color
+
 
 """
 Class Prodavnica_page contains locators and methods used specificaly on "Prodavnica" section on "PCpress" site,
@@ -20,9 +19,9 @@ class Prodavnica_page(Base_page):
     log = cl.customLogger(logging.DEBUG)
 
     """
-    Method taking name of magazine and deefining the beginning of the XPATH to which the suffix(path to specific element)
+    Method taking name of magazine and defining the beginning of the XPATH to which the suffix(path to specific element)
      will be added, in order to create full XPATH.
-    This functionality will be improved, in order to find elements more dinamicaly.
+    This functionality will be improved, in order to find elements more dynamically.
     """
     def base_locator(self, magazine):
         #magazine = magazine.lower()
@@ -35,7 +34,7 @@ class Prodavnica_page(Base_page):
                     "arhiva brojeva casopisa pc": "//*[@id='artikal6bg']",
                     "arhiva brojeva casopisa connect": "//*[@id='artikal8bg']",
                     "knjiga office i windows na radnom mestu": "//*[@id='artikal9bg']",
-                    "ipc 2008+ dl dvd - elektronski indeks casopisa PC": "//*[@id='artikal10bg']",
+                    "ipc 2008+ dl dvd - elektronski indeks casopisa pc": "//*[@id='artikal10bg']",
                     "knjiga pc vodic kroz primene racunara": "//*[@id='artikal12bg']"
         }
         try:
@@ -79,7 +78,30 @@ class Prodavnica_page(Base_page):
         except:
             self.log.error("'Kupujem' button not found")
 
-    #LOCATORS:
+
+    def ordering_by_field(self, magazin, kolicina):
+        try:
+            self.scroll_by_ele(self.checkbox_locator(magazin))
+            self.click(self.checkbox_locator(magazin))
+            self.send_key(kolicina ,self.kolicina_field_locator(magazin))
+            self.log.info("Data entered in 'Kolicina' field")
+        except:
+            self.log.error("Data entering in 'Kolicina' field FAILED")
+
+    def ordering_by_dropdown(self, magazin, drpd_items):
+        try:
+            self.scroll_by_ele(self.checkbox_locator(magazin))
+            self.click(self.checkbox_locator(magazin))
+            self.select_from_dropdown(drpd_items, magazin)
+            self.log.info("Item selected in 'Izaberite brojeve' dropdown list")
+        except:
+            self.log.error("Item selection in 'Izaberite brojeve' dropdown list FAILED")
+
+    def select_from_dropdown(self, drpd_item, magazine):
+            self.dropdown_select(drpd_item, self.dropdown_menu_locator(magazine))
+
+
+        # ORDERING FORM LOCATORS:
     _ime_i_prezime_field = "//*[@id='korisnik']/tbody/tr[1]/td[2]/input"
     _ulica_i_broj_field = "//*[@id='korisnik']/tbody/tr[2]/td[2]/textarea"
     _postanski_broj_field = "//*[@id='korisnik']/tbody/tr[3]/td[2]/input[1]"
@@ -89,32 +111,11 @@ class Prodavnica_page(Base_page):
     _napomena_field = "//*[@id='korisnik']/tbody/tr[6]/td[2]/textarea"
     _narucujem_button = "//*[@id='korisnik']/tbody/tr[7]/td/input[2]"
     _odustajem_button = "//*[@id='korisnik']/tbody/tr[7]/td/input[3]"
+    _lower_kupujem_button = "//*[@id='porudzbenica']/div[12]/input[2]"
 
-    _confirmation_message="//*[@id='doubleprovera']/div/table[1]/tbody/tr[1]/td[2]"
-
-    def ordering_by_field(self, magazin, kolicina):
-        try:
-            self.scroll_by_ele(self.checkbox_locator(magazin))
-            time.sleep(2)
-            self.click(self.checkbox_locator(magazin))
-            time.sleep(2)
-            self.send_key(kolicina ,self.kolicina_field_locator(magazin))
-            time.sleep(2)
-            self.log.info("Data entered in 'Kolicina' field")
-        except:
-            self.log.error("Data entering in 'Kolicina' field FAILED")
-
-
-    def ordering_by_dropdown(self, magazin, drpd_item):
-        try:
-            self.scroll_by_ele(self.checkbox_locator(magazin))
-            self.click(self.checkbox_locator(magazin))
-            time.sleep(2)
-            self.select_from_dropdown(drpd_item, magazin)
-            time.sleep(2)
-            self.log.info("Item selected in 'Izaberite brojeve' dropdown list")
-        except:
-            self.log.error("Item selection in 'Izaberite brojeve' dropdown list FAILED")
+    _empty_order_error = "//*[@id='proverainside']//p[contains(text(),'Molimo izaberite jedan od ponuđenih artikala klikom na')]"
+    _invalid_quantity_error = "//*[@id='proverainside']//p[contains(text(),'Molimo unesite kolicinu u rasponu 0-100')]"
+    _invalid_selection_error = "//*[@id='proverainside']//p[contains(text(),'Molimo izaberite samo jedan magazin')]"
 
 
     def fill_ordering_form(self, ime_i_prezime, ulica_i_broj, postanski_broj, grad, telefon, email, napomena=''):
@@ -130,38 +131,70 @@ class Prodavnica_page(Base_page):
         except:
             self.log.error("'Narudzbenica' form NOT filled")
 
-    def select_from_dropdown(self, drpd_item, magazine):
-        self.dropdown_select(drpd_item, self.dropdown_menu_locator(magazine))
-
 
     def order(self, magasines_list, order_parameters_list, ime_i_prezime, ulica_i_broj, postanski_broj, grad, telefon, email, napomena=''):
-        magasines_list1=magasines_list
-        parameters_list=order_parameters_list
-        i=0
-        for magasine in magasines_list1:
+        magasines_list = magasines_list
+        parameters_list = order_parameters_list
+        i = 0
+        for magasine in magasines_list:
             if 'Broj' in parameters_list[i]:
                 self.ordering_by_dropdown(magasine, parameters_list[i])
-                i=i+1
+                i = i + 1
             else:
                 self.ordering_by_field(magasine, parameters_list[i])
-                i=i+1
-        self.click(self.kupujem_button_locator(magasines_list[i-1]))
-        time.sleep(2)
+                i = i + 1
+        self.click(self.kupujem_button_locator(magasines_list[i - 1]))
         self.fill_ordering_form(ime_i_prezime, ulica_i_broj, postanski_broj, grad, telefon, email, napomena)
-        time.sleep(2)
         self.click(self._narucujem_button)
+        self.sleep(5)
 
-    def is_ordered(self):
+    def empty_order(self):
         try:
-            result=self.get_element(self._confirmation_message).is_displayed()
-            self.log.info("Magazine successfully ordered")
+            self.click(self._lower_kupujem_button)
+            self.sleep(3)
+            result=self.get_element(self._empty_order_error).is_displayed()
+            self.log.info("Empty order error message displayed")
             return result
         except:
-            self.log.error("Magazine oredring FAILED")
+            self.log.error("Empty order error message NOT displayed")
+            return False
+
+    def invalid_quantity_order(self,magazine, quantity):
+        try:
+            self.ordering_by_field(magazine, quantity)
+            self.click(self._lower_kupujem_button)
+            result =self.get_element(self._invalid_quantity_error).is_displayed()
+            self.log.info("Ivalid quantity error message displayed")
+            return result
+        except:
+            self.log.error("Invalid quantity error NOT displayed")
+            return False
+
+    def invalid_selection_order(self,magazine,items):
+        try:
+            self.ordering_by_dropdown(magazine,items)
+            self.click(self._lower_kupujem_button)
+            result = self.get_element(self._invalid_selection_error).is_displayed()
+            self.log.info("Ivalid dropdown selection error message displayed")
+            return result
+        except:
+            self.log.error("Invalid dropdown error NOT displayed")
             return False
 
 
-
-
-
-
+    def verify_zip_city_sync(self, magazines, quantity, name, address, zip, city, phone, email):
+        self.ordering_by_field(magazines, quantity)
+        self.click(self._lower_kupujem_button)
+        self.fill_ordering_form(name, address, zip, city, phone, email)
+        city = self.get_element(self._grad_field).value_of_css_property('background')
+        zip =  self.get_element(self._postanski_broj_field).value_of_css_property('background')
+        cityRgb=city[0:18]
+        zipRgb=zip[0:18]
+        hex_city = Color.from_string(cityRgb).hex
+        hex_zip = Color.from_string(zipRgb).hex
+        if hex_city == '#ff0000' and hex_zip == '#ff0000':
+            self.log.info("'Grad' and 'Postanski broj' fields are synchronised")
+            return True
+        else:
+            self.log.error("'Grad' and 'Postanski broj' fields are NOT synchronised")
+            return False

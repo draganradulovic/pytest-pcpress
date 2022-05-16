@@ -1,0 +1,7 @@
+magazines;quantity;name;address;zip;city;phone;email;
+godisnja pretplata na casopis pc (11 brojeva);1;Op pt;No 9;88000;Mostar;12345678;m@2.co
+godisnja pretplata na casopis pc (11 brojeva);1;Op pt;No 9;88000;Mostar;A12345678;m@2.co
+godisnja pretplata na casopis pc (11 brojeva);1;Op pt;No 9;88000;Mostar;%12345678;m@2.co
+godisnja pretplata na casopis pc (11 brojeva);1;Op pt;No 9;88000;Mostar;a12345678;m@2.co
+godisnja pretplata na casopis pc (11 brojeva);1;Op pt;No 9;88000;Mostar;123.45678;m@2.co
+godisnja pretplata na casopis pc (11 brojeva);1;Op pt;No 9;88000;Mostar; ;m@2.co

@@ -41,16 +41,7 @@ class Selenium_actions():
         el.clear()
         el.send_keys(key)
 
-    def scroll_by_ele(self, element, by='xpath'):
-        el=self.get_element(element, by)
-        ActionChains(self.driver).move_to_element(el).perform()
-        self.driver.execute_script("window.scrollBy(0, -50);")
 
-    def dropdown_select(self,item, element, by='xpath'):
-        el=self.get_element(element, by)
-        select = Select(el)
-        select.deselect_all()
-        select.select_by_visible_text(item)
 
 
 
