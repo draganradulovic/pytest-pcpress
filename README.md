@@ -10,4 +10,4 @@ Test data is read from a CSV file.<br>
 Full testing documentation for the specified page is also uploaded in manualqa-pcpress directory.
 
 Future plans are to improve programs functionalities, add test cases for links, etc.<br>
-Program is built to be modular, so adding new test cases should be simple task.
+Program is built to be modular, so adding new test cases should be simple task. 
